@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tokra · Borrar mi cuenta</title>
+<meta name="theme-color" content="#0a0d0c">
+<link rel="icon" href="icon-192.png">
+<style>
+  @font-face{font-family:'Jakarta';src:url(fonts/jakarta.woff2) format('woff2');font-weight:200 800;font-display:swap}
+  :root{--bg:#0a0d0c;--card:#131816;--card2:#1a201e;--ink:#eef4f1;--muted:#8a9792;--line:#222a27;--v1:#a78bfa;--v2:#7c3aed;--teal:#14b8a6;--red:#f87163}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Jakarta',system-ui,"Segoe UI",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:-200px 0 auto;height:500px;background:radial-gradient(560px 260px at 50% 30%,rgba(124,58,237,.22),transparent 70%);pointer-events:none;z-index:-1}
+  a{color:var(--v1)}
+  .top{max-width:1120px;margin:0 auto;padding:20px 22px;display:flex;align-items:center;justify-content:space-between}
+  .marca{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);font-weight:800;font-size:19px}
+  .marca img{width:36px;height:36px;border-radius:11px}
+  .top nav a{text-decoration:none;color:var(--muted);font-weight:600;font-size:14.5px;padding:8px 12px;border-radius:10px}
+  .top nav a:hover{color:var(--ink);background:var(--card)}
+  main{max-width:760px;margin:0 auto;padding:20px 22px 40px}
+  .pill{display:inline-block;font-size:13px;font-weight:700;color:var(--v1);background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.25);padding:5px 12px;border-radius:99px;margin-bottom:14px}
+  h1{font-size:clamp(30px,4.6vw,44px);line-height:1.1;letter-spacing:-.03em;margin:0 0 12px;font-weight:800}
+  .bajada{color:var(--muted);font-size:17px;margin:0 0 30px}
+  .caja{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 24px;margin-bottom:14px}
+  .caja h2{font-size:18px;margin:0 0 8px;letter-spacing:-.01em}
+  .caja p,.caja li{color:#cfd8d4;font-size:15.5px}
+  .caja p{margin:0 0 10px} .caja p:last-child{margin-bottom:0}
+  .caja ul,.caja ol{margin:0;padding-left:20px;display:grid;gap:6px}
+  .resumen{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}
+  .resumen div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .resumen b{display:block;font-size:15px;margin-bottom:3px}
+  .resumen span{color:var(--muted);font-size:14px;line-height:1.5;display:block}
+  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:15.5px;padding:13px 20px;border-radius:14px;color:#fff;background:linear-gradient(135deg,var(--v1),var(--v2));box-shadow:0 10px 30px rgba(124,58,237,.3)}
+  .btn.rojo{background:var(--red);box-shadow:0 10px 30px rgba(248,113,99,.25)}
+  .muted{color:var(--muted);font-size:14px}
+  footer{border-top:1px solid var(--line);margin-top:50px;padding:24px 22px 36px;color:var(--muted);font-size:14px;text-align:center}
+  footer a{color:var(--muted);margin:0 10px}
+  @media (max-width:700px){ .resumen{grid-template-columns:1fr} .caja{padding:18px} }
+</style>
+</head>
+<body>
+<div class="top"><a class="marca" href="./"><img src="icon-192.png" alt="">Tokra</a><nav><a href="./">Descargar</a></nav></div>
+<main>
+<div class="pill">Borrar mi cuenta</div>
+<h1>Borrar tu cuenta de Tokra</h1>
+<p class="bajada">Se borran tu cuenta y <b>todos tus datos guardados en la nube</b>: cuentas, clientes, presupuestos, negocio, ventas y equipo. No se puede deshacer.</p>
+
+<div class="caja"><h2>Desde la app (lo más rápido)</h2>
+<ol><li>Abrí Tokra y andá a <b>Ajustes</b>.</li><li>En <b>Tus datos en la nube</b>, tocá <b>Borrar mi cuenta</b>.</li><li>Escribí BORRAR para confirmar.</li></ol>
+<p class="muted" style="margin-top:12px">Antes, si querés, exportá una copia en Ajustes → Copia de seguridad.</p></div>
+
+<div class="caja"><h2>Sin la app</h2>
+<p>Mandanos un mail desde la dirección de tu cuenta pidiendo el borrado. Lo hacemos en un máximo de 30 días y te avisamos cuando esté listo.</p>
+<p style="margin-top:16px"><a class="btn rojo" href="mailto:[TU MAIL]?subject=Borrar%20mi%20cuenta%20de%20Tokra&body=Quiero%20que%20borren%20mi%20cuenta%20de%20Tokra%20y%20todos%20mis%20datos.">Pedir el borrado por mail</a></p>
+<p class="muted">Si no se abre tu mail, escribinos a [TU MAIL] con el asunto "Borrar mi cuenta de Tokra".</p></div>
+
+<div class="caja"><h2>Qué se borra y qué no</h2>
+<ul>
+<li><b>Se borra:</b> tu cuenta y todos tus datos de la nube, incluidas las ventas del negocio.</li>
+<li><b>Gastos compartidos:</b> salís de las listas que compartías. La otra persona conserva su copia.</li>
+<li><b>Si tenías Pro:</b> borrar la cuenta no cancela la suscripción de Google Play. Cancelala antes desde Google Play → Pagos y suscripciones.</li>
+<li><b>Comentarios</b> que nos hayas mandado: se borran también si lo pedís en el mail.</li>
+<li><b>Lo guardado solo en tu celu o tu compu</b> no lo podemos tocar: se borra desinstalando la app.</li>
+</ul></div>
+<p class="muted">Más detalle en la <a href="privacidad.html">política de privacidad</a>.</p>
+</main>
+<footer>© 2026 Tokra · todos los derechos reservados<br><a href="./">Inicio</a><a href="privacidad.html">Privacidad</a><a href="borrar-cuenta.html">Borrar mi cuenta</a></footer>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tokra · Tus cuentas, tu laburo y tu negocio</title>
+<meta name="description" content="Anotá lo que cobrás y lo que gastás, armá presupuestos para tus clientes y llevá la caja de tu negocio. Gratis, en la compu y en el celu.">
+<meta property="og:title" content="Tokra">
+<meta property="og:description" content="Tus cuentas, tu laburo y tu negocio, en un solo lugar.">
+<meta property="og:image" content="img/pc-inicio.webp">
+<meta name="theme-color" content="#0a0d0c">
+<link rel="icon" href="icon-192.png">
+<style>
+  @font-face{font-family:'Jakarta';src:url(fonts/jakarta.woff2) format('woff2');font-weight:200 800;font-display:swap}
+  :root{--bg:#0a0d0c;--card:#131816;--card2:#1a201e;--ink:#eef4f1;--muted:#8a9792;--line:#222a27;
+    --v1:#a78bfa;--v2:#7c3aed;--v3:#5b21b6;--teal:#14b8a6;--green:#34d399}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Jakarta',system-ui,"Segoe UI",sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+  /* barra */
+  .top{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+  .marca{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:800;font-size:19px;letter-spacing:-.01em}
+  .marca img{width:38px;height:38px;border-radius:11px}
+  .top nav{display:flex;gap:6px;align-items:center}
+  .top nav a{text-decoration:none;color:var(--muted);font-weight:600;font-size:14.5px;padding:8px 12px;border-radius:10px}
+  .top nav a:hover{color:var(--ink);background:var(--card)}
+  /* botones */
+  .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:16px;padding:14px 22px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);transition:transform .15s,box-shadow .2s,background-color .2s}
+  .btn:hover{transform:translateY(-1px);background:var(--card2)}
+  .btn.prim{background:linear-gradient(135deg,var(--v1),var(--v2));border:0;color:#fff;box-shadow:0 10px 30px rgba(124,58,237,.35)}
+  .btn.prim:hover{box-shadow:0 14px 38px rgba(124,58,237,.45)}
+  .btn svg{width:20px;height:20px;flex:none}
+  .btn small{display:block;font-weight:500;font-size:12px;opacity:.85;margin-top:1px}
+  .btn .t{line-height:1.2;text-align:left}
+  /* portada */
+  .hero{padding:46px 0 30px;text-align:center;position:relative}
+  .hero::before{content:"";position:absolute;inset:-120px 0 auto;height:520px;background:radial-gradient(600px 300px at 50% 30%,rgba(124,58,237,.28),transparent 70%);pointer-events:none;z-index:-1}
+  .pill{display:inline-block;font-size:13px;font-weight:700;color:var(--v1);background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.25);padding:6px 13px;border-radius:99px;margin-bottom:18px}
+  h1{font-size:clamp(34px,5.4vw,58px);line-height:1.06;letter-spacing:-.03em;margin:0 auto 18px;max-width:820px;font-weight:800}
+  h1 em{font-style:normal;background:linear-gradient(120deg,var(--v1),#c4b5fd 45%,var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .bajada{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:640px;margin:0 auto 30px}
+  .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .nota{font-size:13px;color:var(--muted);margin-top:14px}
+  /* capturas */
+  .muestra{margin:46px auto 0;position:relative;max-width:1000px}
+  .tabs{display:inline-flex;gap:4px;padding:5px;background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:22px}
+  .tabs button{font:inherit;font-weight:700;font-size:14px;color:var(--muted);background:none;border:0;padding:8px 16px;border-radius:10px;cursor:pointer}
+  .tabs button.on{background:var(--card2);color:var(--ink)}
+  .pantallas{position:relative;padding-right:120px}
+  .compu{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55);background:var(--card);aspect-ratio:1280/820}
+  .compu img,.cel img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+  .cel{position:absolute;right:0;bottom:-30px;width:230px;aspect-ratio:390/844;border-radius:32px;overflow:hidden;border:6px solid #1d2422;box-shadow:0 30px 70px rgba(0,0,0,.6);background:var(--card)}
+  .fade{animation:fade .35s ease}
+  @keyframes fade{from{opacity:.3}to{opacity:1}}
+  /* secciones */
+  section{padding:84px 0 0}
+  h2{font-size:clamp(26px,3.4vw,38px);letter-spacing:-.02em;line-height:1.15;margin:0 0 10px;text-align:center}
+  .sub{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 38px;font-size:16.5px}
+  .tres{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .caja{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px}
+  .caja h3{margin:12px 0 6px;font-size:19px}
+  .caja p{margin:0 0 12px;color:var(--muted);font-size:15px}
+  .caja ul{margin:0;padding:0;list-style:none;display:grid;gap:7px;font-size:14.5px}
+  .caja li{display:flex;gap:9px;align-items:flex-start}
+  .caja li::before{content:"";flex:none;width:16px;height:16px;margin-top:3px;border-radius:5px;background:var(--c,var(--v1)) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.6 2.6L12 5.5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat;opacity:.9}
+  .ico{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 18%,transparent);color:var(--c)}
+  .ico svg{width:22px;height:22px}
+  .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.04em;color:#fff;background:linear-gradient(135deg,#a78bfa,#f472b6);padding:2px 8px;border-radius:99px;vertical-align:middle;margin-left:6px}
+  .chicos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+  .chico{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+  .chico b{display:block;margin-bottom:4px;font-size:15px}
+  .chico span{color:var(--muted);font-size:14px}
+  /* descargar */
+  .descargas{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:860px;margin:0 auto}
+  .plat{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column}
+  .plat.dest{border-color:rgba(167,139,250,.45);background:linear-gradient(180deg,rgba(124,58,237,.12),var(--card) 60%)}
+  .plat h3{margin:0 0 4px;font-size:20px;display:flex;align-items:center;gap:10px}
+  .plat h3 svg{width:22px;height:22px}
+  .plat p{color:var(--muted);font-size:14.5px;margin:0 0 16px}
+  .plat ol{margin:0 0 18px;padding-left:20px;font-size:14.5px;color:#cfd8d4;display:grid;gap:6px}
+  .plat .btn{margin-top:auto;justify-content:center}
+  .aviso{font-size:13px;color:var(--muted);background:var(--card2);border-radius:12px;padding:10px 12px;margin:0 0 16px}
+  .pronto{margin-top:auto;text-align:center;font-weight:700;color:var(--muted);border:1px dashed var(--line);border-radius:14px;padding:13px}
+  /* preguntas */
+  .faq{max-width:760px;margin:0 auto}
+  details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 20px;margin-bottom:10px}
+  summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--v1);font-size:20px;line-height:1}
+  details[open] summary::after{content:"−"}
+  details p{margin:0 0 16px;color:var(--muted)}
+  footer{margin-top:90px;border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer a{color:var(--muted);margin-left:18px}
+  footer a:hover{color:var(--ink)}
+  @media (max-width:860px){
+    .tres,.descargas{grid-template-columns:1fr}
+    .chicos{grid-template-columns:1fr 1fr}
+    .pantallas{padding-right:0}
+    .compu{display:none}
+    .cel{position:relative;bottom:0;margin:0 auto;width:min(300px,78vw)}
+    .top nav a.ocultar{display:none}
+    footer a{margin:0 18px 0 0}
+  }
+  @media (max-width:480px){ .chicos{grid-template-columns:1fr} .btn{width:100%;justify-content:center} }
+  @media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important} html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-win" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5.5l7.5-1v7H3zm8.5-1.2L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zm8.5 0H21V21l-9.5-1.3z"/></symbol>
+  <symbol id="i-web" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></g></symbol>
+  <symbol id="i-and" viewBox="0 0 24 24"><path fill="currentColor" d="M7.2 9h9.6a1 1 0 011 1v7a1.5 1.5 0 01-1.5 1.5H16v2.3a1.2 1.2 0 01-2.4 0V18.5h-3.2v2.3a1.2 1.2 0 01-2.4 0V18.5h-.3A1.5 1.5 0 016.2 17v-7a1 1 0 011-1zm-2.9.2a1.2 1.2 0 011.2 1.2v5a1.2 1.2 0 01-2.4 0v-5a1.2 1.2 0 011.2-1.2zm15.4 0a1.2 1.2 0 011.2 1.2v5a1.2 1.2 0 01-2.4 0v-5a1.2 1.2 0 011.2-1.2zM8.5 3.2l1.1 1.6A6.3 6.3 0 0112 4.3c.9 0 1.7.2 2.4.5l1.1-1.6a.4.4 0 01.7.4l-1.1 1.6A5 5 0 0117.8 8H6.2a5 5 0 012.7-3.8L7.8 2.6a.4.4 0 01.7-.4zM9.6 6a.6.6 0 100 1.2.6.6 0 000-1.2zm4.8 0a.6.6 0 100 1.2.6.6 0 000-1.2z"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></symbol>
+  <symbol id="i-casa" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 10.5L12 4l8 6.5V20a1 1 0 01-1 1h-4.5v-6h-5v6H5a1 1 0 01-1-1z"/></symbol>
+  <symbol id="i-valija" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0110.5 4h3A1.5 1.5 0 0115 5.5V7M3 12.5h18"/></g></symbol>
+  <symbol id="i-local" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 2 3"/><path d="M10 20v-4.5h4V20"/></g></symbol>
+</svg>
+
+<div class="wrap">
+  <div class="top">
+    <a class="marca" href="#"><img src="icon-192.png" alt="">Tokra</a>
+    <nav>
+      <a href="#que-hace" class="ocultar">Qué hace</a>
+      <a href="#preguntas" class="ocultar">Preguntas</a>
+      <a href="#descargar" class="btn" style="padding:9px 14px;font-size:14px">Descargar</a>
+    </nav>
+  </div>
+
+  <div class="hero">
+    <div class="pill">Gratis para Windows · Android muy pronto</div>
+    <h1>Tus cuentas, tu laburo y tu negocio, <em>en un solo lugar.</em></h1>
+    <p class="bajada">Anotá lo que cobrás y lo que gastás, armá presupuestos para tus clientes y llevá la caja, el stock y los pedidos de tu local. Pensada para Argentina: con el dólar del día y contra la inflación.</p>
+    <div class="ctas">
+      <a class="btn prim" id="btnBajar" href="https://github.com/sheivol/tokra/releases/latest/download/Tokra-Setup.exe">
+        <svg><use href="#i-win"/></svg><span class="t">Descargar para Windows<small>Windows 10 y 11</small></span></a>
+    </div>
+    <div class="nota" id="notaBajar">Versión 1.0.0 · se actualiza sola · Android: muy pronto en Google Play.</div>
+
+    <div class="muestra">
+      <div class="tabs" role="tablist">
+        <button class="on" data-ver="inicio">Mis cuentas</button>
+        <button data-ver="laburo">Mi laburo</button>
+        <button data-ver="negocio">Mi negocio</button>
+      </div>
+      <div class="pantallas">
+        <div class="compu"><img id="imgPc" src="img/pc-inicio.webp" alt="Tokra en la compu" width="1280" height="820"></div>
+        <div class="cel"><img id="imgCel" src="img/cel-inicio.webp" alt="Tokra en el celu" width="390" height="844"></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="que-hace">
+    <h2>Elegís lo que querés llevar</h2>
+    <p class="sub">Marcás lo que te toca y la app te muestra solo eso. Si después empezás a trabajar por tu cuenta o abrís un local, lo prendés en un toque.</p>
+    <div class="tres">
+      <div class="caja" style="--c:var(--v1)">
+        <div class="ico"><svg><use href="#i-casa"/></svg></div>
+        <h3>Mis cuentas</h3>
+        <p>Para saber cuánto te queda a fin de mes.</p>
+        <ul><li>Lo que cobrás, en pesos o en dólares</li><li>Gastos fijos, suscripciones y cuotas, con aviso antes de que venzan</li><li>Límite por categoría: te avisa si te estás pasando</li><li>Ahorro para algo: cuánto te falta y cuánto poner por mes</li><li>Gastos compartidos y tus billeteras</li></ul>
+      </div>
+      <div class="caja" style="--c:#60a5fa">
+        <div class="ico"><svg><use href="#i-valija"/></svg></div>
+        <h3>Trabajo por mi cuenta</h3>
+        <p>Para el que tiene clientes: electricistas, manicuras, diseñadoras, profes.</p>
+        <ul><li>Presupuestos en PDF para mandar por WhatsApp</li><li>Turnos con recordatorio por WhatsApp</li><li>Quién te debe y cuánto</li><li>Tus clientes y lo que les hiciste</li><li>Tu monotributo: cuota, categoría y tope</li></ul>
+      </div>
+      <div class="caja" style="--c:var(--teal)">
+        <div class="ico"><svg><use href="#i-local"/></svg></div>
+        <h3>Tengo un negocio <span class="tag">PRO</span></h3>
+        <p>Para kioscos, almacenes, carnicerías, viandas y emprendimientos.</p>
+        <ul><li>Caja rápida: cargás una venta en segundos, también con lector de código de barras</li><li>Venta por kilo, stock y aviso cuando algo se acaba</li><li>Pedidos y encargos con seña</li><li>Fiado, proveedores, sueldos y aguinaldo</li><li>Lo que más vendés y cuánto ganás de verdad</li></ul>
+      </div>
+    </div>
+    <div class="chicos">
+      <div class="chico"><b>El dólar del día</b><span>Oficial, tarjeta, blue o cripto, como vos lo uses.</span></div>
+      <div class="chico"><b>Contra la inflación</b><span>Te dice si vendiste más de verdad, con el dato del INDEC.</span></div>
+      <div class="chico"><b>En todos lados</b><span>Con tu cuenta, lo ves igual en la compu y en el celu.</span></div>
+      <div class="chico"><b>Tus datos son tuyos</b><span>Sin cuenta, todo queda solo en tu dispositivo.</span></div>
+    </div>
+  </section>
+
+  <section id="descargar">
+    <h2>Descargala</h2>
+    <p class="sub">Es la misma app en la compu y en el celu. Si creás una cuenta, lo que anotás en uno aparece en el otro.</p>
+    <div class="descargas">
+      <div class="plat dest">
+        <h3><svg><use href="#i-win"/></svg>Windows</h3>
+        <p>Para la compu de tu casa o la de la caja del negocio.</p>
+        <ol><li>Descargá el instalador.</li><li>Abrilo y tocá <b>Instalar</b>.</li><li>Listo: queda en el escritorio y en el menú Inicio, y se actualiza sola.</li></ol>
+        <div class="aviso">La primera vez Windows puede decir "Windows protegió su PC" porque la app es nueva. Tocá <b>Más información → Ejecutar de todas formas</b>.</div>
+        <a class="btn prim" href="https://github.com/sheivol/tokra/releases/latest/download/Tokra-Setup.exe"><svg><use href="#i-down"/></svg>Descargar instalador</a>
+      </div>
+      <div class="plat">
+        <h3><svg><use href="#i-and"/></svg>Android</h3>
+        <p>La app para Android, con aviso de vencimientos y entrada con Google.</p>
+        <ol><li>Va a estar en Google Play.</li><li>Si tenés cuenta, todo lo que anotes en la compu va a aparecer en el celu.</li></ol>
+        <div class="pronto">Muy pronto</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="preguntas">
+    <h2>Preguntas</h2>
+    <p class="sub">Lo que más nos preguntan.</p>
+    <div class="faq">
+      <details><summary>¿Es gratis?</summary><p>Sí. Las cuentas personales y el trabajo por tu cuenta son gratis. Lo del negocio va a ser parte de la versión Pro, pero al principio tenés 14 días de prueba gratis.</p></details>
+      <details><summary>¿Dónde quedan mis datos?</summary><p>Si no creás una cuenta, todo queda solamente en tu compu o en tu celu. Si creás una cuenta, se guarda también una copia en la nube (Google Firebase) para que la veas en todos tus dispositivos. Nadie más puede verla y no la vendemos. Más detalle en la <a href="privacidad.html">política de privacidad</a>.</p></details>
+      <details><summary>¿Necesito internet?</summary><p>No. Funciona sin conexión. Internet solo se usa para actualizar el dólar, el dato de inflación y, si tenés cuenta, para sincronizar.</p></details>
+      <details><summary>Tengo un kiosco, ¿me sirve?</summary><p>Sí. Cargás tus productos con su precio y en la caja escribís las primeras letras o pasás el código de barras. Si preferís, anotás solo el total al final del día. También llevás el stock, el fiado, los pedidos, los proveedores y los sueldos.</p></details>
+      <details><summary>¿Es seguro instalarla?</summary><p>Sí. Windows puede mostrar un aviso la primera vez porque la app es nueva y todavía no la conoce. Tocá <b>Más información → Ejecutar de todas formas</b>. Después se actualiza sola cuando sale una versión nueva.</p></details>
+      <details><summary>¿Cómo borro mi cuenta?</summary><p>Desde la app, en Ajustes → Borrar mi cuenta. También podés pedirlo desde <a href="borrar-cuenta.html">esta página</a>.</p></details>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Tokra · todos los derechos reservados</span>
+    <span><a href="privacidad.html">Privacidad</a><a href="borrar-cuenta.html">Borrar mi cuenta</a></span>
+  </div>
+</footer>
+
+<script>
+  // Cambiar las capturas según la pestaña
+  document.querySelectorAll('[data-ver]').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('[data-ver]').forEach(x => x.classList.toggle('on', x === b));
+    for (const [id, pre] of [['imgPc', 'pc'], ['imgCel', 'cel']]) {
+      const im = document.getElementById(id); im.src = 'img/' + pre + '-' + b.dataset.ver + '.webp';
+      im.classList.remove('fade'); void im.offsetWidth; im.classList.add('fade');
+    }
+  }));
+  // Desde el celu: la app de Windows no sirve ahí, avisamos
+  if (/android|iphone|ipad/i.test(navigator.userAgent)) {
+    document.getElementById('notaBajar').innerHTML = 'Estás en el celu: el instalador es para la compu. <b>Android: muy pronto en Google Play.</b>';
+  }
+</script>
+</body>
+</html>
