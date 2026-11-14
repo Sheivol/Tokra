@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tokra · Borrar mi cuenta</title>
-<meta name="theme-color" content="#0a0d0c">
+<meta name="theme-color" content="#7c3aed">
 <link rel="icon" href="icon-192.png">
 <style>
-  @font-face{font-family:'Jakarta';src:url(fonts/jakarta.woff2) format('woff2');font-weight:200 800;font-display:swap}
+  @font-face{font-family:'Inter';src:url(fonts/inter.woff2) format('woff2');font-weight:100 900;font-display:swap}
+  @font-face{font-family:'Bricolage';src:url(fonts/bricolage.woff2) format('woff2');font-weight:200 800;font-display:swap}
+  @font-face{font-family:'Fraunces';src:url(fonts/fraunces-italic.woff2) format('woff2');font-weight:100 900;font-style:italic;font-display:swap}
   :root{--bg:#0a0d0c;--card:#131816;--card2:#1a201e;--ink:#eef4f1;--muted:#8a9792;--line:#222a27;--v1:#a78bfa;--v2:#7c3aed;--teal:#14b8a6;--red:#f87163}
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Jakarta',system-ui,"Segoe UI",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,"Segoe UI",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
   body::before{content:"";position:fixed;inset:-200px 0 auto;height:500px;background:radial-gradient(560px 260px at 50% 30%,rgba(124,58,237,.22),transparent 70%);pointer-events:none;z-index:-1}
   a{color:var(--v1)}
   .top{max-width:1120px;margin:0 auto;padding:20px 22px;display:flex;align-items:center;justify-content:space-between}
@@ -36,14 +38,36 @@
   footer{border-top:1px solid var(--line);margin-top:50px;padding:24px 22px 36px;color:var(--muted);font-size:14px;text-align:center}
   footer a{color:var(--muted);margin:0 10px}
   @media (max-width:700px){ .resumen{grid-template-columns:1fr} .caja{padding:18px} }
+  h1,h2,h3{font-family:'Bricolage','Inter',sans-serif}
+  .marca{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:600;font-size:23px;letter-spacing:0}
+  /* estilo nuevo: violeta arriba, negro abajo */
+  :root{--bg:#0c0a12;--card:#17131f;--card2:#1f1a2b;--ink:#fff;--muted:#a79fb8;--line:#2a2338;--v1:#c4b5fd;--v2:#7c3aed;--am:#fde047}
+  body::before{display:none}
+  .cabeza{background:#7c3aed;background-image:radial-gradient(rgba(255,255,255,.12) 1.5px,transparent 1.5px);background-size:26px 26px;padding-bottom:70px}
+  .cabeza .top nav a{color:#1c1033;background:var(--am);border-radius:999px;padding:9px 16px;font-weight:800}
+  .cabeza .top nav a:hover{background:#fef08a;color:#1c1033}
+  .cabeza .intro{max-width:760px;margin:0 auto;padding:10px 22px 0}
+  .cabeza .pill{color:#1c1033;background:var(--am);border:0}
+  .cabeza h1{color:#fff}
+  .cabeza h1 em{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;color:var(--am)}
+  .cabeza .bajada{color:#ede9fe;margin-bottom:0}
+  .cabeza .bajada .muted{color:#ddd6fe}
+  main{background:var(--bg);border-radius:36px 36px 0 0;margin-top:-36px;position:relative;max-width:none;padding:44px 22px 40px}
+  main>*{max-width:760px;margin-left:auto;margin-right:auto}
+  .caja p,.caja li{color:#e9e4f5}
+  .btn{background:var(--am)!important;color:#1c1033!important;border-radius:999px!important;box-shadow:0 10px 26px rgba(253,224,71,.18)!important}
+  .btn.rojo{background:#f87163!important;color:#fff!important}
+  footer{margin-top:0;border-top:1px solid var(--line)}
+  .marca{color:#fff}
 </style>
 </head>
 <body>
-<div class="top"><a class="marca" href="./"><img src="icon-192.png" alt="">Tokra</a><nav><a href="./">Descargar</a></nav></div>
+<header class="cabeza"><div class="top"><a class="marca" href="./"><img src="icon-192.png" alt="">Tokra</a><nav><a href="./">Descargar</a></nav></div>
+<div class="intro"><div class="pill">Borrar mi cuenta</div>
+<h1>Borrar tu cuenta <em>de Tokra</em></h1>
+<p class="bajada">Se borran tu cuenta y <b>todos tus datos guardados en la nube</b>: cuentas, clientes, presupuestos, negocio, ventas y equipo. No se puede deshacer.</p></div></header>
 <main>
-<div class="pill">Borrar mi cuenta</div>
-<h1>Borrar tu cuenta de Tokra</h1>
-<p class="bajada">Se borran tu cuenta y <b>todos tus datos guardados en la nube</b>: cuentas, clientes, presupuestos, negocio, ventas y equipo. No se puede deshacer.</p>
+
 
 <div class="caja"><h2>Desde la app (lo más rápido)</h2>
 <ol><li>Abrí Tokra y andá a <b>Ajustes</b>.</li><li>En <b>Tus datos en la nube</b>, tocá <b>Borrar mi cuenta</b>.</li><li>Escribí BORRAR para confirmar.</li></ol>
