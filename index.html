@@ -118,6 +118,32 @@ footer a:hover{color:#fff}
   .tabs button{padding:9px 14px;font-size:14px}
   footer a{margin:0 16px 0 0}
 }
+
+/* ---------- Formas (como en la app): sol, arcos, puntas cortadas y formas de colores ---------- */
+header.violeta{position:relative;overflow:hidden}
+header.violeta::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:#fde047;right:4%;top:70px;pointer-events:none}
+header.violeta::after{content:"";position:absolute;left:0;bottom:30px;width:420px;height:320px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='320' viewBox='0 0 420 320'%3E%3Cg fill='none' stroke='%23c4b5fd' stroke-opacity='.35' stroke-width='16'%3E%3Ccircle cx='0' cy='320' r='90'/%3E%3Ccircle cx='0' cy='320' r='150'/%3E%3Ccircle cx='0' cy='320' r='210'/%3E%3C/g%3E%3C/svg%3E") no-repeat;pointer-events:none}
+header.violeta .wrap{z-index:1}
+.forma{position:absolute;pointer-events:none}
+.f-tri{width:0;height:0;border-left:18px solid transparent;border-right:18px solid transparent;border-bottom:30px solid #6ee7b7}
+.f-pto{width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.4)}
+.card,.caja,.paso,.chico,.plat{border-radius:26px 26px 26px 6px}
+details{border-radius:18px 18px 18px 4px}
+.sticker{border-radius:18px 18px 18px 4px}
+.bajar{border-radius:40px 40px 40px 8px;position:relative;overflow:hidden}
+.bajar::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:#fde047;left:-70px;top:-70px;opacity:.9}
+.bajar::after{content:"";position:absolute;right:-20px;bottom:-40px;width:300px;height:230px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='320' viewBox='0 0 420 320'%3E%3Cg fill='none' stroke='%23c4b5fd' stroke-opacity='.35' stroke-width='16'%3E%3Ccircle cx='420' cy='320' r='90'/%3E%3Ccircle cx='420' cy='320' r='150'/%3E%3Ccircle cx='420' cy='320' r='210'/%3E%3C/g%3E%3C/svg%3E") no-repeat right bottom;background-size:300px 230px}
+.bajar>*{position:relative;z-index:1}
+.ico{border-radius:62% 38% 55% 45% / 48% 58% 42% 52%}
+.caja:nth-child(2) .ico{border-radius:45% 55% 40% 60% / 58% 42% 58% 42%}
+.num{border-radius:50%;color:#1c1033;background:#fde047}
+.paso:nth-child(2) .num{border-radius:62% 38% 55% 45% / 48% 58% 42% 52%;background:#c4b5fd}
+.paso:nth-child(3) .num{border-radius:14px 14px 14px 3px;background:#6ee7b7}
+h2{position:relative}
+.sec>h2::before{content:"";display:inline-block;width:14px;height:14px;border-radius:50%;background:#fde047;margin-right:14px;vertical-align:.18em}
+.sec:nth-of-type(2n)>h2::before{border-radius:3px;background:#c4b5fd;transform:rotate(45deg)}
+.sec:nth-of-type(3n)>h2::before{width:0;height:0;background:none;border-radius:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:14px solid #6ee7b7;transform:none}
+@media (max-width:820px){header.violeta::before{width:150px;height:150px;right:-40px;top:auto;bottom:40%}header.violeta::after{opacity:.6}}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><defs>
   <symbol id="i-win" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5.5l7.5-1v7H3zm8.5-1.2L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zm8.5 0H21V21l-9.5-1.3z"/></symbol>
@@ -140,6 +166,7 @@ footer a:hover{color:#fff}
         <div class="chiq" id="notaBajar">Para Windows 10 y 11 · se actualiza sola · Android muy pronto</div>
       </div>
       <div class="foto">
+        <span class="forma f-tri" style="right:6%;top:-4%"></span><span class="forma f-pto" style="left:8%;top:-2%"></span>
         <img class="cel" src="img/cel-inicio.webp" alt="Tokra en el celu" width="390" height="844">
         <div class="sticker s1"><span class="p" style="background:#7c3aed"></span><div>$834.892<small>te queda este mes</small></div></div>
         <div class="sticker s2"><span class="p" style="background:#f59e0b"></span><div>Netflix: mañana<small>te aviso antes</small></div></div>
@@ -193,8 +220,8 @@ footer a:hover{color:#fff}
       <p class="sub">En cinco minutos ya sabés cuánto te queda este mes.</p>
       <div class="pasos">
         <div class="paso"><div class="num">1</div><h3>Bajala</h3><p>Se instala en un minuto y es gratis. No te pide tarjeta.</p></div>
-        <div class="paso"><div class="num" style="background:#ca8a04">2</div><h3>Anotá lo tuyo</h3><p>Lo que cobrás, tus gastos fijos y tus cuotas. Una sola vez.</p></div>
-        <div class="paso"><div class="num" style="background:#059669">3</div><h3>Mirá cuánto te queda</h3><p>Y te avisa antes de cada vencimiento, para que no se te pase nada.</p></div>
+        <div class="paso"><div class="num">2</div><h3>Anotá lo tuyo</h3><p>Lo que cobrás, tus gastos fijos y tus cuotas. Una sola vez.</p></div>
+        <div class="paso"><div class="num">3</div><h3>Mirá cuánto te queda</h3><p>Y te avisa antes de cada vencimiento, para que no se te pase nada.</p></div>
       </div>
     </section>
 
